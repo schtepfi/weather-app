@@ -44,10 +44,10 @@ currentDate.innerHTML = `${day} ${date}.${month}.${year}, ${hours}:${minutes}`;
 
 
 // City Input //
-function search(city) {
+function search(searchInput) {
   var apiKey = "c0a2579dbc68074c7c325b759cdecd5c";
   var unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${unit}`;
   
   axios.get(apiUrl).then(showTemperature);
 }
@@ -57,7 +57,7 @@ function searchCity(event) {
   let searchInput = document.querySelector("#search-text-input");
   document.querySelector("#currentLocation").innerHTML = searchInput.value;
   
-  search(city);
+  search(searchInput);
 }
 
 // Temperature & Wind + Precipiatation & Description//

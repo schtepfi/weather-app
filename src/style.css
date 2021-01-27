@@ -2,7 +2,7 @@
   text-align: center;
   font-family: Comic Sans MS, Comic Sans, cursive;
   padding: 30px 300px;
-  background: url(images/Palm-Trees.JPG);
+  background: url("../images/Background_Clouds.jpg");
   background-size: 100% 100%;
 }
 .card {
