@@ -1,0 +1,114 @@
+.container {
+  text-align: center;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  padding: 30px 300px;
+  background: url(images/Palm-Trees.JPG);
+  background-size: 100% 100%;
+}
+.card {
+  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+}
+h1 {
+  text-transform: uppercase;
+  color: #588790;
+  text-align: center;
+  line-height: 1.5;
+  padding: 20px 0 10px;
+  margin: 0;
+}
+button {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  border: 2px solid #588790;
+  font-size: 20px;
+  background: white;
+  color: #588790;
+  padding: 15px 20px;
+  border-radius: 25px;
+  transition: all 200ms ease;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+}
+button:hover {
+  color: #588790;
+  border: 6px double #588790;
+}
+
+input::placeholder {
+  font-size: 25px;
+}
+.form-control {
+  padding: 18px;
+}
+.search {
+  position: relative;
+  padding: 20px 70px 40px;
+  font-size: 30px;
+}
+.search input {
+  border: 1px solid #588790;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  text-align: left;
+}
+.search .fa-search {
+  position: absolute;
+  right: 90px;
+  top: 35px;
+}
+h2 {
+  display: inline;
+  font-size: 30px;
+}
+
+.fa-map-marker-alt {
+  font-size: 30px;
+  color: #376edd;
+}
+.fa-sun {
+  font-size: 40px;
+  color: #fddd35;
+}
+.units {
+  vertical-align: 50%;
+}
+
+.row-location {
+  text-align: left;
+  padding: 0 100px;
+  font-size: 16px;
+}
+.row-wind {
+  text-align: center;
+  font-size: 20px;
+  padding: 10px 140px 0;
+}
+
+p {
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+  font-size: 25px;
+  font-weight: 700;
+  padding: 20px 0;
+  color: #588790;
+  border-top: 4px double #588790;
+  border-bottom: 4px double #588790;
+  margin: 20px 100px 40px;
+}
+
+.future {
+  text-transform: uppercase;
+  color: #588790;
+  padding: 10px;
+  border-bottom: 2px solid #588790;
+  margin: 0 200px;
+}
+
+.row-forecast {
+  font-size: 18px;
+  display: inline;
+  text-align: center;
+  display: inline-block;
+  margin: 0 0 10px 50px;
+}
