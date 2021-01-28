@@ -7,6 +7,7 @@
 }
 .card {
   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  border-color: #e0eff3;
 }
 h1 {
   text-transform: uppercase;
@@ -111,4 +112,8 @@ p {
   text-align: center;
   display: inline-block;
   margin: 0 0 10px 50px;
+}
+
+.footer {
+  text-align: center;
 }
