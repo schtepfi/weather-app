@@ -1,13 +1,15 @@
-.container {
+body {
   text-align: center;
   font-family: Comic Sans MS, Comic Sans, cursive;
-  padding: 30px 300px;
+  padding: 25px 0px;
   background: url("../images/Background_Clouds.jpg");
   background-size: 100% 100%;
 }
 .card {
   background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   border-color: #e0eff3;
+  max-width: 710px;
+  margin: 0px auto;
 }
 h1 {
   text-transform: uppercase;
