@@ -23,17 +23,24 @@
       <form id="search-form">
         <div class="search"> 
           <i class="fas fa-search"></i> 
-          <input 
-          type="text" 
-          placeholder="Enter a city..." 
-          class="form-control"
-          autofocus="on"
-          autocomplete="off"
-          id="search-text-input"
-          /> 
+          <div class="row">
+            <div class="col-11">
+             <input 
+             type="text" 
+             placeholder="Enter a city..." 
+             class="form-control"
+             autofocus="on"
+             autocomplete="off"
+             id="search-text-input"
+             />   
+            </div>
+            <div class="col-1">
+              <button id="locationButton"><i class="fas fa-map-marker-alt"></i></button>
+            </div>
+          </div>
         </div> 
       </form>
-      <button id="locationButton">Current Location</button>
+
       <div class="row-location">
         <div class="row">
           <div class="col-6">
@@ -93,9 +100,9 @@
       </div>
     </div>
     </div>
+    </div> 
     <br>
     <span class="footer"><a href="https://github.com/schtepfi/weather-app" target="_blank">Open-source code</a>, by Stephanie Schlaepfer</span>
-    </div> 
     <script src="src/script.js"></script> 
   </body>
 </html>

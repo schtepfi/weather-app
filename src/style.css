@@ -19,23 +19,25 @@ h1 {
   padding: 20px 0 10px;
   margin: 0;
 }
+h2 {
+  text-transform: capitalize;
+}
 button {
   display: block;
   margin: 0 auto;
-  margin-bottom: 50px;
-  border: 2px solid #588790;
-  font-size: 20px;
+  border: 1px solid #588790;
+  font-size: 35px;
   background: white;
+  border-radius: 10px;
   color: #588790;
-  padding: 15px 20px;
-  border-radius: 25px;
+  padding: 0, 20px;
   transition: all 200ms ease;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
 }
 button:hover {
   color: #588790;
-  border: 6px double #588790;
+  border: 4px double #588790;
 }
 
 input::placeholder {
@@ -57,7 +59,7 @@ input::placeholder {
 }
 .search .fa-search {
   position: absolute;
-  right: 90px;
+  right: 140px;
   top: 35px;
 }
 h2 {
@@ -68,6 +70,7 @@ h2 {
 .fa-map-marker-alt {
   font-size: 30px;
   color: #376edd;
+  padding: 10px;
 }
 .fa-sun {
   font-size: 40px;
