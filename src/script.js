@@ -60,6 +60,7 @@ function searchCity(event) {
   search(searchInput);
 }
 
+search("Bern");
 // Temperature & Wind + Precipiatation & Description//
 
 function showTemperature(response) {

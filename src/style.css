@@ -23,14 +23,12 @@ h2 {
   text-transform: capitalize;
 }
 button {
-  display: block;
-  margin: 0 auto;
+  position: absolute;
+  top: 128px;
+  right: 55px;
   border: 1px solid #588790;
-  font-size: 35px;
   background: white;
   border-radius: 10px;
-  color: #588790;
-  padding: 0, 20px;
   transition: all 200ms ease;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
   cursor: pointer;
