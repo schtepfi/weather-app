@@ -8,9 +8,16 @@
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1"
-      crossorigin="anonymous"/>
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/c8fb67b08c.js"crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/c8fb67b08c.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
   </head>
@@ -18,94 +25,76 @@
     <div class="container">
       <div class="card">
         <div class="card-body">
-      <h1>Weather Channel</h1>
-      
-      <form id="search-form">
-        <div class="search"> 
-          <i class="fas fa-search"></i> 
-          <div class="row">
-            <div class="col-11">
-             <input 
-             type="text" 
-             placeholder="Enter a city..." 
-             class="form-control"
-             autofocus="on"
-             autocomplete="off"
-             id="search-text-input"
-             />   
+          <h1>Weather Channel</h1>
+
+          <form id="search-form">
+            <div class="search">
+              <i class="fas fa-search"></i>
+              <div class="row">
+                <div class="col-11">
+                  <input
+                    type="text"
+                    placeholder="Enter a city..."
+                    class="form-control"
+                    autofocus="on"
+                    autocomplete="off"
+                    id="search-text-input"
+                  />
+                </div>
+              </div>
+            </div>
+          </form>
+          <button id="locationButton">
+            <i class="fas fa-map-marker-alt"></i>
+          </button>
+
+          <div class="row-location">
+            <div class="row">
+              <div class="col-6">
+                <i class="fas fa-map-marker-alt"></i>
+                <h2 id="currentLocation"></h2>
+              </div>
+              <div class="col-6">
+                <img src="" alt="Clear" id="icon" />
+                <h2 id="currentTemperature"></h2>
+                <span class="units">
+                  <a href="#" id="currentCelsius" class="active">°C </a> |
+                  <a href="#" id="currentFahrenheit">°F</a>
+                </span>
+                <h2><span id="description">Sunny</span></h2>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-5">
+                Today <br /><span id="currentDate"></span>
+              </div>
             </div>
           </div>
-        </div>
-      </form>
-      <button id="locationButton"><i class="fas fa-map-marker-alt"></i></button>
+          <br />
 
-      <div class="row-location">
-        <div class="row">
-          <div class="col-6">
-            <i class="fas fa-map-marker-alt"></i>
-            <h2 id="currentLocation"></h2>
+          <div class="row-wind">
+            <div class="row">
+              <div class="col-6">
+                ☔️ Precipitation: <span id="precipitation"></span>%
+              </div>
+              <div class="col-6">💨 Wind: <span id="wind"></span>km/h</div>
+            </div>
           </div>
-          <div class="col-6">
-            <i class="fas fa-sun"></i>
-            <h2 id="currentTemperature"></h2>
-            <span class="units">
-              <a href="#" id="currentCelsius" class="active">°C </a> | 
-              <a href="#" id="currentFahrenheit">°F</a>
-            </span>
-            <h2> <span id="description">Sunny</span></h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-5">Today <br><span id="currentDate"></span></div>
-        </div>
-      </div>
-        <br />
 
-      <div class="row-wind">        
-        <div class="row">
-          <div class="col-6">☔️ Precipitation: <span id="precipitation"></span>%</div>
-          <div class="col-6">💨 Wind: <span id="wind"></span>km/h</div>
-        </div>
-      </div>
-
-        <br />
-        <p>
-          "The hottest day of the week is Sun-day"
-        </p>
-        <div class="future"><h2>The Future</h2></div>
-        <br />
-        <br>
-
-      <div class="row-forecast">
-        <div class="row">
-          <div class="col-3"> <strong>MON <br> 28.12.20</strong> </div>
-          <div class="col-2"><strong>TUE 29.12.20</strong> </div>
-          <div class="col-2"><strong>WED 30.12.20</strong></div>
-          <div class="col-2"><strong>THU 31.12.20</strong></div>
-          <div class="col-2"><strong>FRI 01.01.21</strong></div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-3"><i class="fas fa-sun"></i></div>
-          <div class="col-2"><i class="fas fa-sun"></i></div>
-          <div class="col-2"><i class="fas fa-sun"></i></div>
-          <div class="col-2"><i class="fas fa-sun"></i></div>
-          <div class="col-2"><i class="fas fa-sun"></i></div>
-        </div>
-        <br>
-        <div class="row">
-          <div class="col-3">18° / 4°</i></div>
-          <div class="col-2">18° / 4°</i></div>
-          <div class="col-2">18° / 4°</i></div>
-          <div class="col-2">18° / 4°</i></div>
-          <div class="col-2">18° / 4°</i></div>
+          <br />
+          <p>"The hottest day of the week is Sun-day"</p>
+          <div class="future"><h2>The Future</h2></div>
+          <br />
+          <div class="row weather-forecast" id="forecast"></div>
         </div>
       </div>
     </div>
-    </div>
-    </div> 
-    <br>
-    <span class="footer"><a href="https://github.com/schtepfi/weather-app" target="_blank">Open-source code</a>, by Stephanie Schlaepfer</span>
-    <script src="src/script.js"></script> 
+    <br />
+    <span class="footer">
+      <a href="https://github.com/schtepfi/weather-app" target="_blank"
+        >Open-source code</a
+      >, by Stephanie Schlaepfer
+    </span>
+    <script src="src/script.js"></script>
   </body>
 </html>
