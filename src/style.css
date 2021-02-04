@@ -78,6 +78,16 @@ h2 {
   vertical-align: 50%;
 }
 
+.units .active {
+  color: black;
+  cursor: default;
+  text-decoration: none;
+}
+
+.units .active:hover {
+  text-decoration: none;
+}
+
 .row-location {
   text-align: left;
   padding: 0 100px;

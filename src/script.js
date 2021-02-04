@@ -42,41 +42,55 @@ if (minutes < 10) {
 
 currentDate.innerHTML = `${day} ${date}.${month}.${year}, ${hours}:${minutes}`;
 
-
 // City Input //
 function search(searchInput) {
   var apiKey = "c0a2579dbc68074c7c325b759cdecd5c";
   var unit = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput.value}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=${unit}`;
   
   axios.get(apiUrl).then(showTemperature);
 }
 
 function searchCity(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");
-  document.querySelector("#currentLocation").innerHTML = searchInput.value;
-  
-  search(searchInput);
+  let searchInput = document.querySelector("#search-text-input");  
+  search(searchInput.value);
 }
 
-search("Bern");
-// Temperature & Wind + Precipiatation & Description//
-
+// Temperature & Wind + Precipiatation & Description //
 function showTemperature(response) {
-  document.querySelector("#currentTemperature").innerHTML = Math.round(response.data.main.temp);
+  document.querySelector("#currentTemperature").innerHTML = Math.round(celsiusTemperature);
+  document.querySelector("#currentLocation").innerHTML = response.data.name;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#precipitation").innerHTML = response.data.main.humidity;
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
+  
+  celsiusTemperature = response.data.main.temp;
 }
 
-let searchForm = document.querySelector("#search-form");
-searchForm.addEventListener("submit", searchCity);
+// Unit conversion //
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#currentTemperature");
+  
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-search("Bern");
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#currentTemperature");
+  
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+  
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 
 // Current location //
-
 function showPosition(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
@@ -91,5 +105,20 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+
+let celsiusTemperature = null;
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", searchCity);
+
+let celsiusLink = document.querySelector("#currentCelsius");
+celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+let fahrenheitLink = document.querySelector("#currentFahrenheit");
+fahrenheitLink.addEventListener("click", showFahrenheitTemperature);
+
 let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", getCurrentPosition);
+
+search("Bern");
+
