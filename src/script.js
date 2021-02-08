@@ -1,17 +1,18 @@
 // Date & Time //
 
 let currentDate = document.querySelector("#currentDate");
+let currentDay = document.querySelector("#currentDay")
 
 let now = new Date();
 
 let days = [
-  "SUN",
-  "MON",
-  "TUE",
-  "WED",
-  "THU",
-  "FRI",
-  "SAT"
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday"
 ];
 let day = days[now.getDay()];
 let date = now.getDate();
@@ -40,9 +41,11 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-currentDate.innerHTML = `${day} ${date}.${month}.${year}, ${hours}:${minutes}`;
+currentDate.innerHTML = `${date}.${month}.${year}, ${hours}:${minutes}`;
+currentDay.innerHTML = `${day}`;
 
-function formatHours (Timestamp) {
+
+function formatHours (timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -101,12 +104,12 @@ function searchCity(event) {
   search(searchInput.value);
 }
 
-// Temperature & Wind + Precipiatation & Description //
+// Temperature & Wind + Humidity & Description //
 function showTemperature(response) {
   document.querySelector("#currentTemperature").innerHTML = Math.round(celsiusTemperature);
   document.querySelector("#currentLocation").innerHTML = response.data.name;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
-  document.querySelector("#precipitation").innerHTML = response.data.main.humidity;
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
 
   let iconElement = document.querySelector("#icon");

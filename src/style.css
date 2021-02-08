@@ -6,7 +6,7 @@ body {
   background-size: 100% 100%;
 }
 .card {
-  background-image: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  background-image: linear-gradient(to top, ##eaeae8 0%, #eef1f5 100%);
   border-color: #e0eff3;
   max-width: 710px;
   margin: 0px auto;
@@ -70,9 +70,14 @@ h2 {
   color: #376edd;
   padding: 10px;
 }
-.fa-sun {
-  font-size: 40px;
-  color: #fddd35;
+
+li {
+  list-style-type: none;
+}
+#description {
+  position: absolute;
+  top: 288px;
+  right: 133px;
 }
 .units {
   vertical-align: 50%;
@@ -95,7 +100,7 @@ h2 {
 }
 .row-wind {
   text-align: center;
-  font-size: 20px;
+  font-size: 18px;
   padding: 10px 140px 0;
 }
 
@@ -120,7 +125,7 @@ p {
 }
 
 .row-forecast {
-  font-size: 18px;
+  font-size: 20px;
   display: inline;
   text-align: center;
   display: inline-block;

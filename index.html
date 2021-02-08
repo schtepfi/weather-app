@@ -53,6 +53,8 @@
               <div class="col-6">
                 <i class="fas fa-map-marker-alt"></i>
                 <h2 id="currentLocation"></h2>
+                <li>Today <span id="currentDay"></span>,</li>
+                <li><span id="currentDate"></span></li>
               </div>
               <div class="col-6">
                 <img src="" alt="Clear" id="icon" />
@@ -60,13 +62,8 @@
                 <span class="units">
                   <a href="#" id="currentCelsius" class="active">°C </a> |
                   <a href="#" id="currentFahrenheit">°F</a>
+                  <span id="description"></span>
                 </span>
-                <h2><span id="description">Sunny</span></h2>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-5">
-                Today <br /><span id="currentDate"></span>
               </div>
             </div>
           </div>
@@ -74,13 +71,10 @@
 
           <div class="row-wind">
             <div class="row">
-              <div class="col-6">
-                ☔️ Precipitation: <span id="precipitation"></span>%
-              </div>
+              <div class="col-6">💦 Humidity: <span id="humidity"></span>%</div>
               <div class="col-6">💨 Wind: <span id="wind"></span>km/h</div>
             </div>
           </div>
-
           <br />
           <p>"The hottest day of the week is Sun-day"</p>
           <div class="future"><h2>The Future</h2></div>
