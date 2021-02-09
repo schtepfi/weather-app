@@ -118,7 +118,7 @@ function showTemperature(response) {
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);  
 
-  document.querySelector("#curretDate").innerHTML = formatDate(response.data.dt * 1000);
+  document.querySelector("#currentDate").innerHTML = formatDate(response.data.dt * 1000);
 }
 
 // Unit conversion //
@@ -147,12 +147,14 @@ function showCelsiusTemperature(event) {
 function showPosition(position) {
   let apiKey = "c0a2579dbc68074c7c325b759cdecd5c";
   let unit = "metric";
-  let latitude = position.coord.lat;
-  let longitude = position.coord.lon;
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
     
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-
   axios.get(apiUrl).then(showTemperature);
+  
+  apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+  axios.get(apiURL).then(showForecast);
 }
 
 function getCurrentPosition(event) {
