@@ -146,12 +146,11 @@ function showCelsiusTemperature(event) {
 // Current location //
 function showPosition(position) {
   let apiKey = "c0a2579dbc68074c7c325b759cdecd5c";
-  let unit = "metric";
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
     
-  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-    
+  let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=${apiKey}`;
+
   axios.get(apiUrl).then(showTemperature);
 }
 
@@ -175,4 +174,3 @@ let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", getCurrentPosition);
 
 search("Bern");
-
