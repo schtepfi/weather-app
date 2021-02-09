@@ -1,10 +1,9 @@
 // Date & Time //
 function formatDate(timestamp) {
 
-let currentDate = document.querySelector("#currentDate");
-let currentDay = document.querySelector("#currentDay")
-
 let now = new Date();
+let date = now.getDate();
+let year = now.getFullYear();
 
 let days = [
   "Sunday",
@@ -16,7 +15,6 @@ let days = [
   "Saturday"
 ];
 let day = days[now.getDay()];
-let date = now.getDate();
 let months = [
   "01",
   "02",
@@ -32,7 +30,7 @@ let months = [
   "12"
 ];
 let month = months[now.getMonth()];
-let year = now.getFullYear();  
+
 let hours = now.getHours();
 if (hours < 10) {
   hours = `0${hours}`;
@@ -41,9 +39,9 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-
-currentDate.innerHTML = `${date}.${month}.${year}, ${hours}:${minutes}`;
 currentDay.innerHTML = `${day}`;
+
+return`${date}.${month}.${year}, ${hours}:${minutes}`;
 }
 
 function formatHours (timestamp) {
@@ -116,7 +114,7 @@ function showTemperature(response) {
 
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
-  iconElement.setAttribute("alt", response.data.weather[0].description);  
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 
   document.querySelector("#currentDate").innerHTML = formatDate(response.data.dt * 1000);
 }
@@ -151,7 +149,7 @@ function showPosition(position) {
   let longitude = position.coords.longitude;
     
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
-  axios.get(apiUrl).then(showTemperature);
+  axios.get(apiURL).then(showTemperature);
   
   apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   axios.get(apiURL).then(showForecast);
