@@ -1,4 +1,5 @@
 // Date & Time //
+function formatDate(timestamp) {
 
 let currentDate = document.querySelector("#currentDate");
 let currentDay = document.querySelector("#currentDay")
@@ -43,7 +44,7 @@ if (minutes < 10) {
 
 currentDate.innerHTML = `${date}.${month}.${year}, ${hours}:${minutes}`;
 currentDay.innerHTML = `${day}`;
-
+}
 
 function formatHours (timestamp) {
   let date = new Date(timestamp);
@@ -116,6 +117,8 @@ function showTemperature(response) {
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);  
+
+  document.querySelector("#curretDate").innerHTML = formatDate(response.data.dt * 1000);
 }
 
 // Unit conversion //
@@ -154,6 +157,7 @@ function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
+
 
 
 let celsiusTemperature = null;
