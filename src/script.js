@@ -145,6 +145,8 @@ function showCelsiusTemperature(event) {
 
 // Current location //
 function showPosition(position) {
+  let apiKey = "c0a2579dbc68074c7c325b759cdecd5c";
+  let unit = "metric";
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
     
@@ -157,8 +159,6 @@ function getCurrentPosition(event) {
   event.preventDefault();
   navigator.geolocation.getCurrentPosition(showPosition);
 }
-
-
 
 let celsiusTemperature = null;
 
