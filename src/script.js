@@ -160,6 +160,20 @@ function getCurrentPosition(event) {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+// Comments //
+function changeComment() {
+  let weather = response.data.weather[0].main;
+  let commentElement = document.querySelector("#comment");
+  
+  if (weather === "Clear") {
+    commentElement.innerHTML = "The hottest day of the week is Sun-day";
+  } else if (weather === "Clouds") {
+    commentElement.innerHTML = "What did one raindrop say to the other? Two's company, three's a cloud.";
+  } else {
+    commentElement.innerHTML = "Wish you a beautiful day!";
+  }
+}
+
 let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
@@ -175,3 +189,4 @@ let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", getCurrentPosition);
 
 search("Bern");
+changeComment();
