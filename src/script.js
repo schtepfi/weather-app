@@ -117,6 +117,8 @@ function showTemperature(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   document.querySelector("#currentDate").innerHTML = formatDate(response.data.dt * 1000);
+  
+  changeComment(response.data.weather[0].main);
 }
 
 // Unit conversion //
@@ -161,14 +163,28 @@ function getCurrentPosition(event) {
 }
 
 // Comments //
-function changeComment() {
-  let weather = response.data.weather[0].main;
+function changeComment(weather) {
   let commentElement = document.querySelector("#comment");
-  
   if (weather === "Clear") {
     commentElement.innerHTML = "The hottest day of the week is Sun-day";
   } else if (weather === "Clouds") {
-    commentElement.innerHTML = "What did one raindrop say to the other? Two's company, three's a cloud.";
+    commentElement.innerHTML =
+      "What did one raindrop say to the other? Two's company, three's a cloud.";
+  } else if (weather === "Thunderstorm") {
+    commentElement.innerHTML =
+      "What kind of shorts do clouds wear? Thunderwear!";
+  } else if (weather === "Drizzle") {
+    commentElement.innerHTML =
+      "What do you call a bear caught out in the rain? A drizzily bear.";
+  } else if (weather === "Rain") {
+    commentElement.innerHTML =
+      "Anyone who says sunshine brings happiness has never danced in the rain.";
+  } else if (weather === "Snow") {
+    commentElement.innerHTML =
+      "Cold winter weather is snow laughing matter!";
+  } else if (weather === "Atmosphere") {
+    commentElement.innerHTML =
+      "Why did the cloud stay at home? It was feeling under the weather.";
   } else {
     commentElement.innerHTML = "Wish you a beautiful day!";
   }
@@ -189,4 +205,3 @@ let locationButton = document.querySelector("#locationButton");
 locationButton.addEventListener("click", getCurrentPosition);
 
 search("Bern");
-changeComment();
