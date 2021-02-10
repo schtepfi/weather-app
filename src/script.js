@@ -77,7 +77,7 @@ function showForecast(response) {
       <div class="weather-forecast-temperature">
         <strong>
           ${Math.round(forecast.main.temp_max)}°
-        </strong>
+        </strong> /
         ${Math.round(forecast.main.temp_min)}°
       </div>
     </div>
@@ -182,9 +182,6 @@ function changeComment(weather) {
   } else if (weather === "Snow") {
     commentElement.innerHTML =
       "Cold winter weather is snow laughing matter!";
-  } else if (weather === "Atmosphere") {
-    commentElement.innerHTML =
-      "Why did the cloud stay at home? It was feeling under the weather.";
   } else {
     commentElement.innerHTML = "Wish you a beautiful day!";
   }
@@ -194,6 +191,7 @@ let celsiusTemperature = null;
 
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
+searchForm.addEventListener("click", searchCity);
 
 let celsiusLink = document.querySelector("#currentCelsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);

@@ -21,6 +21,8 @@ h1 {
 }
 h2 {
   text-transform: capitalize;
+  display: inline;
+  font-size: 30px;
 }
 button {
   position: absolute;
@@ -59,10 +61,6 @@ input::placeholder {
   position: absolute;
   right: 140px;
   top: 35px;
-}
-h2 {
-  display: inline;
-  font-size: 30px;
 }
 
 .fa-map-marker-alt {
@@ -121,7 +119,7 @@ p {
   color: #588790;
   padding: 10px;
   border-bottom: 2px solid #588790;
-  margin: 0 200px;
+  margin: 0 240px;
 }
 
 .row-forecast {
