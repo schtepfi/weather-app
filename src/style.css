@@ -6,7 +6,7 @@ body {
   background-size: 100% 100%;
 }
 .card {
-  background-image: linear-gradient(to top, ##eaeae8 0%, #eef1f5 100%);
+  background-image: linear-gradient(to top, #eef1f5 100%);
   border-color: #e0eff3;
   max-width: 710px;
   margin: 0px auto;
