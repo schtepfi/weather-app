@@ -1,50 +1,50 @@
 // Date & Time //
 function formatDate(timestamp) {
 
-let now = new Date();
-let date = now.getDate();
-let year = now.getFullYear();
+  let now = new Date();
+  let date = now.getDate();
+  let year = now.getFullYear();
 
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday"
-];
-let day = days[now.getDay()];
-let months = [
-  "01",
-  "02",
-  "03",
-  "04",
-  "05",
-  "06",
-  "07",
-  "08",
-  "09",
-  "10",
-  "11",
-  "12"
-];
-let month = months[now.getMonth()];
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday"
+  ];
+  let day = days[now.getDay()];
+  let months = [
+    "01",
+    "02",
+    "03",
+    "04",
+    "05",
+    "06",
+    "07",
+    "08",
+    "09",
+    "10",
+    "11",
+    "12"
+  ];
+  let month = months[now.getMonth()];
 
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
+  let hours = now.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  currentDay.innerHTML = `${day}`;
+
+  return `${date}.${month}.${year}, ${hours}:${minutes}`;
 }
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-currentDay.innerHTML = `${day}`;
 
-return`${date}.${month}.${year}, ${hours}:${minutes}`;
-}
-
-function formatHours (timestamp) {
+function formatHours(timestamp) {
   let date = new Date(timestamp);
   let hours = date.getHours();
   if (hours < 10) {
@@ -90,7 +90,7 @@ function search(searchInput) {
   var apiKey = "c0a2579dbc68074c7c325b759cdecd5c";
   var unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchInput}&appid=${apiKey}&units=${unit}`;
-  
+
   axios.get(apiUrl).then(showTemperature);
 
   apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${searchInput}&appid=${apiKey}&units=${unit}`;
@@ -99,7 +99,7 @@ function search(searchInput) {
 
 function searchCity(event) {
   event.preventDefault();
-  let searchInput = document.querySelector("#search-text-input");  
+  let searchInput = document.querySelector("#search-text-input");
   search(searchInput.value);
 }
 
@@ -113,11 +113,11 @@ function showTemperature(response) {
   document.querySelector("#description").innerHTML = response.data.weather[0].description;
 
   let iconElement = document.querySelector("#icon");
-  iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   document.querySelector("#currentDate").innerHTML = formatDate(response.data.dt * 1000);
-  
+
   changeComment(response.data.weather[0].main);
 }
 
@@ -125,10 +125,10 @@ function showTemperature(response) {
 function showFahrenheitTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#currentTemperature");
-  
+
   celsiusLink.classList.remove("active");
   fahrenheitLink.classList.add("active");
-  
+
   let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32
   temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
 }
@@ -136,10 +136,10 @@ function showFahrenheitTemperature(event) {
 function showCelsiusTemperature(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#currentTemperature");
-  
+
   celsiusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
-  
+
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 
@@ -149,10 +149,10 @@ function showPosition(position) {
   let unit = "metric";
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
-    
+
   let apiURL = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   axios.get(apiURL).then(showTemperature);
-  
+
   apiURL = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   axios.get(apiURL).then(showForecast);
 }
@@ -189,9 +189,11 @@ function changeComment(weather) {
 
 let celsiusTemperature = null;
 
+let searchIcon = document.querySelector(".fa-search");
+searchIcon.addEventListener("click", searchCity);
+
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", searchCity);
-searchForm.addEventListener("click", searchCity);
 
 let celsiusLink = document.querySelector("#currentCelsius");
 celsiusLink.addEventListener("click", showCelsiusTemperature);
