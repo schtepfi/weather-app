@@ -108,7 +108,7 @@ function easterHunt() {
   let searchInput = document.querySelector("#search-text-input");
 
   if (searchInput.value === "Philadelphia") {
-    alert("Well done one more riddle to crack: ····-  -----");
+    alert("Well done one more riddle to crack:\r\n \r\n · · · · -     - - - - - ");
     alert("once you figure out the code go to: https://sites.google.com/view/easterhunt-travelblog")
   }
 }
