@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-family: Comic Sans MS, Comic Sans, Comic Neue, cursive;
   padding: 25px 0px;
   background: url("../images/Background_Clouds.png");
 }
@@ -131,4 +131,77 @@ p {
 
 .footer {
   text-align: center;
+}
+
+@media (max-width: 576px) {
+.card {
+  max-width: 560px;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.search {
+  margin: 0 10px 10px 15px;
+  padding: 10px 15px 10px 0px;
+  font-size: 15px;
+}
+
+input::placeholder {
+  font-size: 15px;
+}
+.search input {
+  padding: 5px;
+}
+
+.search .fa-search {
+    position: absolute;
+    right: 55px;
+    top: 20px;
+}
+button {
+    position: absolute;
+    top: 94px;
+    right: 20px;
+}
+.fa-map-marker-alt {
+    font-size: 20px;
+    padding: 5px;
+}
+.row-location, 
+.row-wind {
+  padding: 0 20px;
+  font-size: 10px;
+}
+img {
+  max-width: 40%;
+}
+p {
+  font-size: 15px;
+  margin: 10px 10px;
+  padding: 10px 20px;
+}
+.future {
+  margin: 0 95px;
+  padding: 10px 0 0;
+}
+.weather-forecast img {
+  max-width: 34px;
+}
+.weather-forecast {
+  font-size: 6px;
+}
+#description {
+  position: relative;
+  top: -20px;
+  left: 55px;
+}
+.footer {
+  font-size: 10px;
+}
 }
