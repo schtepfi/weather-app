@@ -31,7 +31,7 @@ button {
   background: white;
   border-radius: 10px;
   transition: all 200ms ease;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
 button:hover {
@@ -53,7 +53,7 @@ input::placeholder {
 .search input {
   border: 1px solid #588790;
   border-radius: 5px;
-  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   text-align: left;
 }
 .search .fa-search {
@@ -165,9 +165,9 @@ input::placeholder {
   top: 20px;
 }
 button {
-  position: absolute;
-  top: 95px;
-  right: 15px;
+  position: relative;
+  top: -55px;
+  left: 150px;
 }
 .fa-map-marker-alt {
     font-size: 20px;
