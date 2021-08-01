@@ -2,8 +2,7 @@ body {
   text-align: center;
   font-family: Comic Sans MS, Comic Sans, cursive;
   padding: 25px 0px;
-  background: url("../images/Background_Clouds.jpg");
-  background-size: 100% 100%;
+  background: url("../images/Background_Clouds.png");
 }
 .card {
   background-image: linear-gradient(to top, #eef1f5 100%);
