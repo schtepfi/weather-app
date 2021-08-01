@@ -160,14 +160,14 @@ input::placeholder {
 }
 
 .search .fa-search {
-    position: absolute;
-    right: 55px;
-    top: 20px;
+  position: absolute;
+  right: 55px;
+  top: 20px;
 }
 button {
-    position: absolute;
-    top: 94px;
-    right: 20px;
+  position: absolute;
+  top: 95px;
+  right: 15px;
 }
 .fa-map-marker-alt {
     font-size: 20px;
